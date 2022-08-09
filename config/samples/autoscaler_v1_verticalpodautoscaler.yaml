@@ -1,0 +1,8 @@
+apiVersion: autoscaler.kubebuilder.rym/v1
+kind: VerticalPodAutoscaler
+metadata:
+  name: verticalpodautoscaler-sample
+spec:
+  deploymentName: "bilibili"
+  requestCPU: 1
+  requestMemory: 2

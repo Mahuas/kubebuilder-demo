@@ -1,0 +1,33 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: null
+  name: manager-role
+rules:
+- apiGroups:
+  - autoscaler.kubebuilder.rym
+  resources:
+  - verticalpodautoscalers
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - autoscaler.kubebuilder.rym
+  resources:
+  - verticalpodautoscalers/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - autoscaler.kubebuilder.rym
+  resources:
+  - verticalpodautoscalers/status
+  verbs:
+  - get
+  - patch
+  - update
